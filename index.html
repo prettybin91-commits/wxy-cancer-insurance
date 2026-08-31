@@ -9,9 +9,9 @@
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
 
 :root {
-  --orange:#ff6a00;
-  --orange-2:#ff8a00;
-  --yellow:#ffc533;
+  --orange:#7c3aed;
+  --orange-2:#8b5cf6;
+  --yellow:#2563eb;
   --dark:#1a1a1a;
   --text:#222;
   --muted:#777;
@@ -56,7 +56,7 @@ button,input,textarea { font:inherit; }
   color:#fff;
   background-image:
     linear-gradient(180deg, rgba(38,0,0,.46) 0%, rgba(61,10,0,.35) 45%, rgba(88,18,0,.50) 100%),
-    url("./assets/hero-bg.png");
+    url("./assets/cancer_background.png");
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -88,7 +88,7 @@ button,input,textarea { font:inherit; }
   font-size:42px;
   line-height:1;
   margin-bottom:8px;
-  filter:drop-shadow(0 2px 8px rgba(255,180,0,.35));
+  filter:drop-shadow(0 2px 8px rgba(37,99,235,.35));
 }
 .eyebrow {
   margin:0 0 10px;
@@ -96,7 +96,7 @@ button,input,textarea { font:inherit; }
   font-size:29px;
   line-height:1.35;
   letter-spacing:-.5px;
-  color:#ffbf2f;
+  color:#2563eb;
   text-shadow:0 2px 18px rgba(0,0,0,.25);
 }
 .hero h1 {
@@ -114,9 +114,9 @@ button,input,textarea { font:inherit; }
   justify-content:center;
   padding:12px 28px;
   border-radius:999px;
-  border:2px solid rgba(255,202,79,.9);
+  border:2px solid rgba(37,99,235,.9);
   background:rgba(0,0,0,.23);
-  color:#ffd452;
+  color:#2563eb;
   font-size:16px;
   font-weight:500;
   box-shadow:0 10px 24px rgba(0,0,0,.12);
@@ -143,7 +143,7 @@ button,input,textarea { font:inherit; }
   display:grid;
   grid-template-columns:104px 1fr 152px;
   align-items:center;
-  background:linear-gradient(90deg,#ffba2d,#ff6a00);
+  background:linear-gradient(90deg,#2563eb,#7c3aed);
   box-shadow:var(--shadow);
   border-radius:4px;
   overflow:hidden;
@@ -154,7 +154,7 @@ button,input,textarea { font:inherit; }
   align-items:center;
   justify-content:center;
   color:#fff;
-  background:rgba(255,198,70,.18);
+  background:rgba(37,99,235,.18);
 }
 .cs-icon {
   width:66px;
@@ -192,7 +192,7 @@ button,input,textarea { font:inherit; }
   margin-right:14px;
   border:0;
   background:#fff;
-  color:#f46200;
+  color:#7c3aed;
   font-size:18px;
   font-weight:600;
   cursor:pointer;
@@ -240,24 +240,29 @@ button,input,textarea { font:inherit; }
 .card:hover {
   transform:translateY(-8px);
   box-shadow:0 20px 32px rgba(0,0,0,.10);
-  border-color:#ffbb85;
+  border-color:#7c3aed;
 }
 .card.featured {
-  border-color:#ff7d25;
+  border-color:#e5e5e5;
+}
+.card.featured:hover {
+  border-color:#7c3aed;
 }
 .card-visual {
   height:108px;
   display:grid;
   place-items:center;
-  background:
-    linear-gradient(120deg,rgba(255,110,0,.92), rgba(255,190,45,.60)),
-    linear-gradient(#d5d5d5,#efefef);
-  color:#fff;
-  font-size:42px;
-}
-.card:not(.featured) .card-visual {
   filter:grayscale(1);
   background:linear-gradient(135deg,#e1e1e1,#f2f2f2);
+  color:#fff;
+  font-size:42px;
+  transition:filter .28s ease, background .28s ease;
+}
+.card:hover .card-visual {
+  filter:none;
+  background:
+    linear-gradient(120deg,rgba(37,99,235,.92),rgba(124,58,237,.72)),
+    linear-gradient(#d5d5d5,#efefef);
 }
 .card-body {
   padding:18px;
@@ -274,7 +279,10 @@ button,input,textarea { font:inherit; }
   text-align:center;
 }
 .card.featured h3 {
-  color:#ef4d0e;
+  color:#222;
+}
+.card:hover h3 {
+  color:#7c3aed;
 }
 .card p {
   margin:0 0 12px;
@@ -305,8 +313,8 @@ button,input,textarea { font:inherit; }
   color:#777;
 }
 .card-actions a:last-child {
-  border:2px solid #ff7a22;
-  color:#ff6900;
+  border:2px solid #7c3aed;
+  color:#7c3aed;
 }
 
 /* CONSULT */
@@ -370,12 +378,12 @@ button,input,textarea { font:inherit; }
   font-size:20px;
   font-weight:600;
   cursor:pointer;
-  background:linear-gradient(90deg, #ff7400, #ffc833);
+  background:linear-gradient(90deg,#2563eb,#7c3aed);
   transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
 }
 .submit:hover {
   transform:translateY(-2px);
-  box-shadow:0 14px 26px rgba(255,116,0,.26);
+  box-shadow:0 14px 26px rgba(124,58,237,.26);
   filter:saturate(1.05);
 }
 .notice {
@@ -401,7 +409,7 @@ footer {
   height:16px;
   min-width:16px;
   margin:1px 0 0;
-  accent-color:#ff6a00;
+  accent-color:#7c3aed;
   cursor:pointer;
 }
 .privacy-link{
@@ -610,6 +618,7 @@ footer {
     transition:none !important;
   }
 }
+
 </style>
 </head>
 <body>
