@@ -54,30 +54,13 @@ button,input,textarea { font:inherit; }
   min-height:560px;
   overflow:hidden;
   color:#fff;
-  background-image:
-    linear-gradient(180deg, rgba(38,0,0,.46) 0%, rgba(61,10,0,.35) 45%, rgba(88,18,0,.50) 100%),
-    url("./assets/cancer_background.png");
-  background-size:cover;
-  background-position:center center;
+  background-color:#8fcbe5;
+  background-image:url("./assets/cancer_background.png");
+  background-size:auto 100%;
+  background-position:right center;
   background-repeat:no-repeat;
 }
-.hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 50% 60%, rgba(255,185,64,.18), transparent 26%),
-    linear-gradient(90deg, rgba(0,0,0,.15), rgba(0,0,0,0) 28%, rgba(0,0,0,.05) 72%, rgba(0,0,0,.18));
-  pointer-events:none;
-}
-.hero::after {
-  content:"";
-  position:absolute;
-  inset:auto 0 0;
-  height:140px;
-  background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.02) 35%, rgba(255,255,255,0) 100%);
-  pointer-events:none;
-}
+.hero::before,.hero::after { content:none; }
 .hero .hero-inner {
   position:relative;
   z-index:2;
@@ -485,7 +468,7 @@ footer {
 @media (max-width: 980px) {
   .hero {
     min-height:520px;
-    background-position:68% center;
+    background-position:right center;
   }
   .hero .hero-inner {
     padding:64px 20px 164px;
@@ -527,12 +510,8 @@ footer {
   }
   .hero {
     min-height:520px;
+    background-size:cover;
     background-position:74% center;
-  }
-  .hero::before {
-    background:
-      linear-gradient(180deg, rgba(31,0,0,.34), rgba(31,0,0,.18) 45%, rgba(31,0,0,.35) 100%),
-      radial-gradient(circle at 50% 65%, rgba(255,184,59,.12), transparent 26%);
   }
   .hero .hero-inner {
     padding:44px 24px 150px;
@@ -834,25 +813,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 
 document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => observer.observe(el));
-
-// subtle parallax for hero background
-const hero = document.querySelector('.hero');
-let ticking = false;
-
-function handleParallax() {
-  const rect = hero.getBoundingClientRect();
-  const offset = Math.max(-40, Math.min(40, rect.top * -0.08));
-  hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
-  ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-  if(window.innerWidth <= 640) return;
-  if(!ticking) {
-    window.requestAnimationFrame(handleParallax);
-    ticking = true;
-  }
-}, { passive:true });
 
 // card hover tilt
 document.querySelectorAll('.card').forEach(card => {
