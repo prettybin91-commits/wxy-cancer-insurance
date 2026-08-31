@@ -121,43 +121,7 @@ button,input,textarea { font:inherit; }
   font-weight:500;
   box-shadow:0 10px 24px rgba(0,0,0,.12);
 }
-.scroll-cue {
-  position:absolute;
-  left:50%;
-  bottom:24px;
-  transform:translateX(-50%);
-  z-index:3;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  color:rgba(255,255,255,.82);
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.scroll-cue .mouse {
-  width:30px;
-  height:48px;
-  border:2px solid rgba(255,255,255,.75);
-  border-radius:999px;
-  position:relative;
-}
-.scroll-cue .mouse::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  top:9px;
-  width:4px;
-  height:10px;
-  border-radius:999px;
-  background:#fff;
-  transform:translateX(-50%);
-  animation:wheel 1.6s infinite;
-}
-@keyframes wheel {
-  0%   { opacity:1; transform:translateX(-50%) translateY(0); }
-  70%  { opacity:0; transform:translateX(-50%) translateY(14px); }
+70%  { opacity:0; transform:translateX(-50%) translateY(14px); }
   100% { opacity:0; transform:translateX(-50%) translateY(14px); }
 }
 .floating {
@@ -551,7 +515,7 @@ footer {
 
 @media (max-width: 640px) {
   .wrap {
-    width:min(100% - 24px, 1100px);
+    width:min(100% - 48px, 1100px);
   }
   .hero {
     min-height:520px;
@@ -563,7 +527,7 @@ footer {
       radial-gradient(circle at 50% 65%, rgba(255,184,59,.12), transparent 26%);
   }
   .hero .hero-inner {
-    padding:44px 12px 150px;
+    padding:44px 24px 150px;
   }
   .badge-icon {
     font-size:32px;
@@ -580,9 +544,6 @@ footer {
     font-size:12px;
     padding:9px 14px;
     margin-top:14px;
-  }
-  .scroll-cue {
-    bottom:18px;
   }
   .quick {
     margin-top:-74px;
@@ -630,6 +591,17 @@ footer {
   }
 }
 
+
+@media (max-width: 380px) {
+  .wrap {
+    width:min(100% - 32px, 1100px);
+  }
+  .hero .hero-inner {
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
+
 /* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }
@@ -649,11 +621,6 @@ footer {
     <h1>WXY 암보험</h1>
     <div class="hero-sub">암보험 전문 상담 · 내 조건에 맞는 보장 비교</div>
   </div>
-
-  <a href="#coverage" class="scroll-cue" aria-label="아래로 이동">
-    <div class="mouse"></div>
-    <span>scroll</span>
-  </a>
 </section>
 
 <div class="quick reveal">
